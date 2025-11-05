@@ -1,3 +1,7 @@
+#ifndef TWR_H_
+#define TWR_H_
+
+
 #include "deca_device_api.h"
 #include "deca_regs.h"
 #include "stm32g031xx.h"
@@ -52,4 +56,6 @@ typedef enum {
 void send_poll_message(void);
 float calculate_distance(void);
 
-float rxfgg_cb(void);
+float rxfg_cb(void);
+
+#endif

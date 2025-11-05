@@ -75,7 +75,7 @@ float calculate_distance(void) {
   return tof * SPEED_OF_LIGHT;
 }
 
-float rxfgg_cb(void) {
+float rxfg_cb(void) {
   dwt_write32bitreg(SYS_STATUS_ID, SYS_STATUS_RXFCG);
   /* 读取接收到的帧数据 */
   frame_len = dwt_read32bitreg(RX_FINFO_ID) & RX_FINFO_RXFL_MASK_1023;

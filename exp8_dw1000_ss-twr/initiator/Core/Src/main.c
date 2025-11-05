@@ -154,7 +154,7 @@ int main(void) {
         case APP_STATE_WAIT_RESP:
           /* 接收到良好帧 */
           if (status_reg & SYS_STATUS_RXFCG) {
-            float dist = rxfgg_cb();
+            float dist = rxfg_cb();
             if (dist > 0) {
               printf("==>[INFO] Dist: %.2f\r\n", dist);
             }
