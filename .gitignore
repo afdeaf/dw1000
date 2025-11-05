@@ -1,55 +1,130 @@
-# Prerequisites
-*.d
+# DW1000 实验项目通用 .gitignore
 
-# Object files
+# ========== 编译输出文件 ==========
 *.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
 *.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
 *.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
+*.d
+*.lst
+*.map
+*.hex
+*.bin
+*.elf
+*.axf
+*.s19
 *.i*86
 *.x86_64
-*.hex
+*.eep
+*.lss
+*.sym
+*.tmp
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# ========== Keil MDK-ARM 相关 ==========
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+*.crf
+*.dep
+*.lnp
+*.htm
+*.build_log.htm
+*.sct
+*.objlist
+DebugConfig/
+RTE/
+*.dbgconf
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# ========== EIDE 构建目录 ==========
+build/
+*.eide.ini
+*.log
+compile_commands.json
+ref.json
+unify_builder.log
+.obj/
+objs.db
 
-# debug information files
-*.dwo
+# ========== 编辑器文件 ==========
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-*
+
+# ========== 系统文件 ==========
+.DS_Store
+Thumbs.db
+*.orig
+
+# ========== 本地配置 ==========
+*.local
+.env
+.env.*
+*.private
+
+# ========== 备份文件 ==========
+*.bak
+*.backup
+*.old
+
+# ========== 日志文件 ==========
+*.log
+logs/
+
+# ========== 临时文件 ==========
+*.tmp
+temp/
+tmp/
+
+# ========== 特定构建输出 ==========
+# EIDE 构建缓存
+.eide/
+.cache/
+
+# ========== 项目特定忽略规则 ==========
+
+# 实验目录通用忽略规则
+**/build/
+**/.obj/
+**/DebugConfig/
+**/RTE/
+**/*.map
+**/*.axf
+**/*.hex
+
+# 但保留以下重要文件
+!**/startup_*
+!**/LICENSE.txt
+!**/*.h
+!**/*.c
+!**/*.s
+
+# ========== 保留项目配置文件 ==========
+# EIDE 项目文件
+!**/eide.yml
+!**/env.ini
+!**/files.options.yml
+!**/.clang-format
+!**/.gitignore
+
+# MDK-ARM 项目文件（如果需要保留）
+#!**/*.uvprojx
+#!**/*.uvoptx
+
+# VS Code 工作区文件
+!**/*.code-workspace
+
+# ========== 特定实验目录的例外 ==========
+# 如果有特定实验需要保留某些构建文件，可以在这里添加例外
+# 例如：!exp8_dw1000_ss-twr/some_special_file
+
+# ========== 文档和资源文件 ==========
+# 忽略大型资源文件（如果有的话）
+*.bin
+*.img
+*.iso
+
+# 但保留小的资源文件
+!**/*.txt
+!**/*.md
+!**/*.pdf
